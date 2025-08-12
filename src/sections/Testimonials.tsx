@@ -1,3 +1,4 @@
+import Button from "@/components/button";
 import { FC } from "react";
 import Image from "next/image";
 import React from "react";
@@ -49,19 +50,67 @@ const Testimonials: FC = () => {
         {testimonials.map((testimonial, index) => (
           <React.Fragment key={testimonial.name}>
             {index === 0 && (
-              <div className="testimonial">
+              <div className="testimonial flex flex-col md:flex-row md:gap-7 lg:gap-12">
                 <Image
                   src={testimonial.image}
                   alt={testimonial.name}
-                  className="aspect-square object-cover md:aspect-auto"
+                  className="aspect-square object-cover md:aspect-auto md:size-5/12 lg:size-full"
                 />
-                <div className="testimonial-text text-2xl mt-5">
-                &quot;{testimonial.quote}&quot;
+                <div className="testimonial-text mt-5 flex flex-col space-y-3 md:mt-0 justify-center">
+                  <span className="text-2xl md:text-5xl lg:text-6xl lg:w-4/5">
+                    &quot;{testimonial.quote}&quot;
+                  </span>
+                  <span className="md:text-lg">
+                    {testimonial.name}, {testimonial.role} at{" "}
+                    {testimonial.company}
+                  </span>
                 </div>
               </div>
             )}
           </React.Fragment>
         ))}
+      <div className="navigation">
+      <div className="buttons mt-5 flex gap-5 *:rounded-full">
+                  <Button
+                    variant="icon-only"
+                    iconAfter={
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="size-5"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+                        />
+                      </svg>
+                    }
+                  ></Button>
+                  <Button
+                    variant="icon-only"
+                    iconAfter={
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="size-5"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                        />
+                      </svg>
+                    }
+                  ></Button>
+                </div>
+      </div>
       </div>
     </section>
   );

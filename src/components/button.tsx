@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 
 const Button = (
   props: {
-    variant: "primary"|"secondary"|"text";
+    variant: "primary"|"secondary"|"text"|"icon-only";
     iconAfter?: ReactNode;
   } & ButtonHTMLAttributes<HTMLButtonElement>
 ) => {
@@ -16,6 +16,7 @@ const Button = (
         variant === "primary" && "bg-red-orange-500 text-white",
         variant === "secondary" && "",
         variant === "text" && "h-auto px-0 border-transparent",
+        variant === "icon-only" && "border-zinc-300",
         className
       )}
       {...rest}
