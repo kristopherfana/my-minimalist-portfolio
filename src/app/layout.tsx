@@ -22,6 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head><meta name="google-site-verification" content="n4dp_votmfEmmkd9YdQ9UruL1KanMe6DhUkOVbCOb70" /></head>
       <body className={`${archivo.variable} antialiased bg-stone-100 text-stone-900 font-sans`}>{children}</body>
     </html>
   );
