@@ -16,7 +16,7 @@ const Button = (
         variant === "primary" && "bg-red-orange-500 text-white",
         variant === "secondary" && "",
         variant === "text" && "h-auto px-0 border-transparent",
-        variant === "icon-only" && "border-zinc-300 p-3 size-auto rounded-full flex gap-0 aspect-square",
+        variant === "icon-only" && "border-zinc-300 p-2 size-auto rounded-full flex gap-0 aspect-square",
         className
       )}
       {...rest}

@@ -1,4 +1,4 @@
-import Button from '../components/button';
+import Button from "../components/button";
 import { FC } from "react";
 import React from "react";
 
@@ -29,33 +29,34 @@ const faqs = [
 const FAQs: FC = () => {
   return (
     <section>
-      <div className="container mt-48">
-        <h2 className="text-4xl">FAQs</h2>
+      <div className="container mt-44 md:mt-56 lg:mt-72">
+        <h2 className="text-4xl md:text-6xl lg:text-7xl">FAQs</h2>
         <div className="questions border-t border-dotted border-t-zinc-400 mt-10">
           {faqs.map((question) => (
             <React.Fragment key={"index"}>
-              <div className="py-6 border-b border-dotted border-b-zinc-400">
-                <div className="question text-xl">{question.question}</div>
-                <Button
-                  variant="icon-only"
-                  className="w-max"
-                  iconAfter={
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      className="size-5 aspect-square"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 4.5v15m7.5-7.5h-15"
-                      />
-                    </svg>
-                  }
-                ></Button>
+              <div className="py-6 border-b border-dotted border-b-zinc-400 flex justify-between gap-6">
+                <div className="question text-xl md:text-2xl">{question.question}</div>
+                <div>
+                  <Button
+                    variant="icon-only"
+                    iconAfter={
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="size-5"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M12 4.5v15m7.5-7.5h-15"
+                        />
+                      </svg>
+                    }
+                  ></Button>
+                </div>
               </div>
             </React.Fragment>
           ))}
